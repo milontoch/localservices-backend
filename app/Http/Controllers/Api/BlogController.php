@@ -93,12 +93,12 @@ class BlogController extends Controller
         }
 
         $post = BlogPost::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'category' => $request->category,
+            'title' => $request->input('title'),
+            'content' => $request->input('content'),
+            'category' => $request->input('category'),
             'photo_url' => $photoUrl,
-            'author_name' => $request->author_name,
-            'status' => $request->status,
+            'author_name' => $request->input('author_name'),
+            'status' => $request->input('status'),
             'slug' => $slug,
         ]);
 
