@@ -22,8 +22,8 @@ WORKDIR /var/www
 # Copy composer files first for better caching
 COPY composer.json composer.lock ./
 
-# Install dependencies
-RUN composer install --no-dev --optimize-autoloader --no-scripts --no-interaction
+# Install dependencies - update lock file if needed
+RUN composer update --no-dev --optimize-autoloader --no-scripts --no-interaction
 
 # Copy application files
 COPY . .
